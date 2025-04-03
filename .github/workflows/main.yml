@@ -13,6 +13,6 @@ jobs:
         sudo apt-get install -y lftp
         lftp -u "${{ secrets.ftp_username }}","${{ secrets.ftp_password }}" ftp://${{ secrets.ftp_server }} <<EOF
         set ssl:verify-certificate no
-        mirror -R --only-newer --parallel=10 --exclude .git --exclude .github --exclude README.md ./ deploy.martin-kudela.cz
+        mirror -R --only-newer --delete --parallel=10 --exclude .git --exclude .github --exclude README.md ./ deploy.martin-kudela.cz
         bye
         EOF
