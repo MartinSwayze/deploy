@@ -1,1 +1,1 @@
-# deploy
+# ftp-deploy
